@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>爱奇艺</title>
+    <link rel="stylesheet" href="common.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script src="index.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="header-nav">
+        <div class="logo"><a href="http://www.aiqiyi.com/"><img src="img/iqiyi-logo105x50.png" alt="爱奇艺"></a></div>
+        <div class="search">
+            <div class="search-left">
+                <input type="text" placeholder="熊出没" id="sou"/>
+                <div class="search-list" id="slist">
+                    <h3>最近热搜</h3>
+                    <ul>
+                        <li><i class="first">1</i><span>因为遇见你</span></li>
+                        <li><i class="second">2</i><span>射雕英雄传</span></li>
+                        <li><i class="third">3</i><span>熊出没</span></li>
+                        <li><i>4</i><span>鸡毛飞上天</span></li>
+                        <li><i>5</i><span>王牌对王牌</span></li>
+                        <li><i>6</i><span>老爸当家</span></li>
+                        <li><i>7</i><span>三生三世十里桃花</span></li>
+                        <li><i>8</i><span>云巅之上</span></li>
+                        <li><i>9</i><span>无间道</span></li>
+                        <li><i>10</i><span>欢乐喜剧人</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search-right">
+                <button type="button"></button>
+            </div>
+        </div>
+        <div class="top-nav">
+            <ul class="nav-list">
+                <li><a id="login-btn" href="#">登录</a></li>
+                <li><a id="register-btn" href="#">注册</a></li>
+                <li><a href="#">开通VIP</a></li>
+                <li class="update-unit">
+                    <a href="#" class="hasdown"><span class="update"></span>上传<i class="downlist-mark"></i></a>
+                    <div class="update-downlist">
+                        <span class="mark-up"></span>
+                        <ul>
+                            <li><a href="#">上传视频</a><i class="circle-sm"></i></li>
+                            <li><a href="#">制作视频</a><i class="circle-sm"></i></li>
+                            <li><a href="#">我的空间</a></li>
+                            <li><a href="#">视频管理</a></li>
+                            <li><a href="#">流量分析</a></li>
+                            <li><a href="#">申请分成</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="loadapp">
+                    <span class="free">送VIP</span><a href="#">下载客户端</a>
+                    <div class="free-intr">首次安装送爱奇艺PC客户端，免广告，送VIP<span class="mark-up"></span></div>
+                </li>
+                <li><a href="#" class="hasdown">消息<i class="downlist-mark"></i></a></li>
+                <li><a href="#" class="hasdown">播放记录<i class="downlist-mark"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--登录框-->
+<div class="login login-before" id="login">
+    <div class="login-title">
+        <h3>登录爱奇艺，悦享品质生活</h3><span id="login-close"></span>
+    </div>
+    <div class="login-msg">
+        <ul>
+            <li>
+                <div class="left-msg">账 号：</div>
+                <div class="right-msg right-border">
+                    <input class="text-input" type="text" placeholder="请输入手机号码或邮箱">
+                </div>
+            </li>
+            <li>
+                <div class="left-msg">密 码：</div>
+                <div class="right-msg right-border">
+                    <input class="text-input" type="text" placeholder="请输入密码">
+                </div>
+            </li>
+            <li class="msg-pwd">
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <div class="fl">
+                        <label for="rember"> <input type="checkbox" checked id="rember"/>记住我</label>
+                    </div>
+                    <div class="fr">
+                        <a href="#">找回密码</a><span> | </span><a href="#">立即注册</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <button type="button" class="login-btn">登 录</button>
+                </div>
+            </li>
+            <li>
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <div class="other-way">
+                        使用其他方式登录
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--注册框-->
+<div class="login login-rel" id="register">
+    <div class="login-title">
+        <h3>登录爱奇艺，悦享品质生活</h3><span id="register-close"></span>
+    </div>
+    <div class="login-msg">
+        <ul>
+            <li>
+                <div class="left-msg">手 机：</div>
+                <div class="right-msg right-border">
+                    <input class="text-input" type="text" placeholder="请输入手机号码">
+                </div>
+            </li>
+            <li>
+                <div class="left-msg">密 码：</div>
+                <div class="right-msg right-border">
+                    <input class="text-input" type="text" placeholder="请输入密码">
+                </div>
+            </li>
+            <li>
+                <div class="left-msg">验证码：</div>
+                <div class="right-msg">
+                    <div class="right-border fl">
+                        <input type="text" placeholder="请输入右侧字母"/>
+                    </div>
+                    <div class="yzm fr">
+                        <span>ADDL</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <div class="right-border fl">
+                        <input type="text" placeholder="请输入验证码"/>
+                    </div>
+                    <div class="yzm fr">
+                        <span>获取验证码</span>
+                    </div>
+                </div>
+            </li>
+            <li class="msg-pwd">
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <div class="fl">
+                        <label for="rember"> <input type="checkbox" checked id="rember"/>我同意<a
+                                href="#">《服务协议》</a></label>
+                    </div>
+                    <div class="fr">
+                        <a href="#">立即登录</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <button type="button" class="login-btn">注 册</button>
+                </div>
+            </li>
+            <li>
+                <div class="left-msg"></div>
+                <div class="right-msg">
+                    <div class="other-way">
+                        使用其他方式登录
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--焦点图-->
+<div class="img-bg" id="box">
+    <div class="list-box">
+        <ul class="list-news" id="list">
+            <li class="active"><a href="#">射雕:一灯忆往昔 瑛姑怒寻仇</a></li>
+            <li><a href="#">剃刀边缘:刀剑共舞 谍海同行</a></li>
+            <li><a href="#">吃光全宇宙预告:王青生吃活虫</a></li>
+            <li><a href="#">寻找前世之旅2:揭秘六世虐恋</a></li>
+            <li><a href="#">歌手：张杰试水民谣反串女声</a></li>
+            <li><a href="#">濑户内海：段子手的思春日常</a></li>
+            <li><a href="#">BBC史诗级神作：生命</a></li>
+            <li><a href="#">特步321跑步节 等你开跑</a></li>
+            <li><a href="#">KFC宅急送WOW桶享8折</a></li>
+            <li class="last"><a href="#">怡养大咖秀黄晓明妈妈大曝料</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--中间导航-->
+<div class="nav-bg">
+    <div class="nav-list">
+        <ul class="mg-r20">
+            <li><a href="#">娱乐</a></li>
+            <li><a href="#">体育</a></li>
+            <li><a href="#">资讯</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">片花</a></li>
+            <li><a href="#">网络电影</a></li>
+        </ul>
+        <ul class="mg-r20">
+            <li><a href="#">电视剧</a></li>
+            <li><a href="#">综艺</a></li>
+            <li><a href="#">脱口秀</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">动漫</a></li>
+            <li><a href="#">儿童</a></li>
+            <li><a href="#">教育</a></li>
+        </ul>
+        <ul class="mg-r20">
+            <li><a href="#">生活</a></li>
+            <li><a href="#">母婴</a></li>
+            <li><a href="#">健康</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">音乐</a></li>
+            <li><a href="#">时尚</a></li>
+            <li><a href="#">旅游</a></li>
+        </ul>
+        <ul class="mg-r20">
+            <li><a href="#">搞笑</a></li>
+            <li><a href="#">原创</a></li>
+            <li><a href="#">拍客</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">财经</a></li>
+            <li><a href="#">科技</a></li>
+            <li><a href="#">汽车</a></li>
+        </ul>
+        <ul class="mg-r20">
+            <li><a href="#">军事</a></li>
+            <li><a href="#">公益</a></li>
+            <li><a href="#">纪录片</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">风云榜</a></li>
+            <li><a href="#">全网影视</a></li>
+            <li><a href="#">全网搜索</a></li>
+        </ul>
+        <ul class="mg-r20">
+            <li><a href="#">奇秀直播</a></li>
+            <li><a href="#">直播中心</a></li>
+            <li><a href="#">应用商店</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">商城</a></li>
+            <li><a href="#">游戏视频</a></li>
+            <li><a href="#">游戏中心</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">大头</a></li>
+            <li><a href="#">爱奇艺号</a></li>
+            <li><a href="#">VR</a></li>
+        </ul>
+        <ul class="mg-r20">
+            <li><a href="#">文学</a></li>
+            <li><a href="#">广告</a></li>
+            <li><a href="#">个人中心</a></li>
+        </ul>
+        <div class="fl">
+            <a href="#"><i class="vip-gold"></i><span class="vip-link">VIP会员</span></a>
+        </div>
+    </div>
+</div>
+<!--今日焦点-->
+<div class="today-focus">
+    <div class="focus-left fl">
+        <div class="focus-title">
+            <a href="#" class="the-title"><span>今日焦点</span> 更多&gt;</a>
+            <a href="#" class="pos"><span></span>浙江站</a>
+        </div>
+        <div class="focus-news">
+            <h3><a href="#">追寻习近平总书记的初心·宁德篇</a></h3>
+            <ul class="list-item">
+                <li><i></i><a href="#">韩国乐天集团主动关闭中国境内约20家门店</a></li>
+                <li><i></i><a href="#">南宁市委原书记被控受贿901万元一审开庭 </a></li>
+                <li><i></i><a href="#">中国红旗19反导系统或已开始值班 回击萨德入韩 </a></li>
+                <li><i></i><a href="#">小伙充电玩手机遭雷击身亡 霍金将乘飞船上太空</a></li>
+                <li><i></i><a href="#"> 小夫妻售楼部互殴 老太眼里取出8条3厘米活虫</a></li>
+                <li><i></i><a href="#"> 首例芒果太空育种细胞成活 冻虾体内惊现胶状物</a></li>
+            </ul>
+
+        </div>
+        <div class="focus-video">
+            <div class="item-box">
+                <div class="video-item">
+                    <div class="item-img"><a href="#"><img src="img/467017aece1340e38fe7b18ed89677ec.jpg" alt=""></a>
+                    </div>
+                    <p><a href="#">美女见大爷给钞票才愿出嫁</a></p>
+                </div>
+                <div class="video-item">
+                    <div class="item-img"><a href="#"><img src="img/e3dc62ba173e49d79d1f96299381c468.gif" alt=""></a>
+                    </div>
+                    <p><a href="#">挖掘机推倒围墙砸伤男子</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="focus-center fl">
+        <div class="video-img-box">
+            <span class="prev-btn">&lt;</span><span class="next-btn">&gt;</span>
+            <div><a href="#"><img src="img/1d2c88f9fa324f72a7fe53b73510edf2.jpg" alt=""></a></div>
+            <div class="intr-bg-box"></div>
+            <div class="intr-msg">
+                <i></i><a href="#">醉了，男子浓妆艳抹为求偶</a>
+            </div>
+        </div>
+        <ul class="list-item">
+            <li><i></i><a href="#">刘德华坠马广告曝光 大S调侃汪小菲"人模人样"</a></li>
+            <li><i></i><a href="#">卡戴珊首谈被劫持心情 刘诗诗：与王千源有CP感</a></li>
+            <li><i></i><a href="#">高圆圆见赵雷变迷妹显娇羞 王俊凯海上骑车酷炫 </a></li>
+            <li><i></i><a href="#">《捉妖记2》胡巴被虐 19岁超模Vittoria成名路</a></li>
+            <li><i></i><a href="#">爱奇艺VR眼镜小阅悦69包邮 带货女王袁姗姗同款</a></li>
+        </ul>
+    </div>
+    <div class="focus-right fl">
+        <div class="item-box">
+            <div class="video-item">
+                <div class="item-img"><a href="#"><img src="img/135ca32c553e44a2b0787f5137516263.jpg" alt=""></a></div>
+                <p><a href="#">迪玛希花腔炫技再现高音撩</a></p>
+            </div>
+            <div class="video-item">
+                <div class="item-img"><a href="#"><img src="img/8099da8f0e4f4c019157d422e276ecf5.jpg" alt=""></a></div>
+                <p><a href="#">美大卖军火为针对中国？</a></p>
+            </div>
+            <div class="video-item">
+                <div class="item-img"><a href="#"><img src="img/91380c3edde04315a7cccec2d02e84dc.jpg" alt=""></a></div>
+                <p><a href="#">霸道总裁马可扔给你一颗心</a></p>
+            </div>
+            <div class="video-item">
+                <div class="item-img"><a href="#"><img src="img/1d16eb61863a48d6b5cec1691bc150be.jpg" alt=""></a></div>
+                <p><a href="#">白羊月歌手音乐彰显活力</a></p>
+            </div>
+            <div class="video-item">
+                <div class="item-img"><a href="#"><img src="img/516fee4969ac464bb4506dcfad380b0d.jpg" alt=""></a></div>
+                <p><a href="#">骷髅岛金刚推倒美艳女演员</a></p>
+            </div>
+            <div class="video-item">
+                <div class="item-img"><a href="#"><img src="img/e73002b761684d9696fba7fa7a835172.jpg" alt=""></a></div>
+                <p><a href="#">周冬雨潮牌堆积造型累赘</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--综艺-->
+<div class="variety clearfix">
+    <div class="variety-left">
+        <div class="common-title">
+            <h3><a href="javascript:"><i></i>综艺<span>更多 &gt;</span></a></h3>
+            <ul>
+                <li class="bg-none"><a href="javascript:">歌手</a></li>
+                <li><a href="javascript:">王牌对王牌第二季</a></li>
+                <li><a href="javascript:">坑王驾到</a></li>
+            </ul>
+        </div>
+        <div class="cont clearfix">
+            <div class="cont-left">
+                <div class="img-cont">
+                    <a href="javascript:"><img src="img/fcc2d5b0def84979bb5817d45ba8b8b0.jpg" alt=""></a>
+                </div>
+                <div class="img-cont-intr">
+                    <div><a class="color-dark" href="javascript:">吃光全宇宙：曼谷(下)</a></div>
+                    <div><a class="color-gray" href="javascript:">王青晋升黑暗料理大师 椰子蛆冬阴功汤！呕让我吐一会儿</a></div>
+                </div>
+            </div>
+            <div class="cont-right">
+                <div class="right-cont-box">
+                    <ul>
+                        <li>
+                            <div class="img-cont">
+                                <a href="javascript:"><img src="zongyi/7c0079a40dbe4bc0b86b6786f5f3d340.jpg" alt=""></a>
+                            </div>
+                            <div class="img-cont-intr">
+                                <div><a class="color-dark" href="javascript:">歌手：全网首播</a></div>
+                                <div><a class="color-gray" href="javascript:">“小绿宝”打造史上最硬广告植入</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-cont">
+                                <a href="javascript:"><img src="zongyi/0cf530ab5eb24010a7951c541bfb5732.jpg" alt=""></a>
+                            </div>
+                            <div class="img-cont-intr">
+                                <div><a class="color-dark" href="javascript:">笑声传奇</a></div>
+                                <div><a class="color-gray" href="javascript:">耿直文松开怼白凯南：看着想吐</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-cont">
+                                <a href="javascript:"><img src="zongyi/6e9adcb488954d6db5c0ee2b5c385540.jpg" alt=""></a>
+                            </div>
+                            <div class="img-cont-intr">
+                                <div><a class="color-dark" href="javascript:">坑王驾到：VIP尊享</a></div>
+                                <div><a class="color-gray" href="javascript:">老郭幼时梦想讲相声遭老师白眼</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-cont">
+                                <a href="javascript:"><img src="zongyi/9bec2304689f4e32b6878722d4dbadea.jpg" alt=""></a>
+                            </div>
+                            <div class="img-cont-intr">
+                                <div><a class="color-dark" href="javascript:">我想见到你</a></div>
+                                <div><a class="color-gray" href="javascript:">回忆杀！苏有朋再唱神曲《当》</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-cont">
+                                <a href="javascript:"><img src="zongyi/89ac2695e3784219b30f399cc628ed35.jpg" alt=""></a>
+                            </div>
+                            <div class="img-cont-intr">
+                                <div><a class="color-dark" href="javascript:">诗书中华</a></div>
+                                <div><a class="color-gray" href="#">疯狂甩锅~汉服迷妹与老爸反目</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-cont">
+                                <a href="javascript:"><img src="zongyi/9bec2304689f4e32b6878722d4dbadea.jpg" alt=""></a>
+                            </div>
+                            <div class="img-cont-intr">
+                                <div><a class="color-dark" href="#">跨界歌王</a></div>
+                                <div><a class="color-gray" href="#">陈建斌任嘉伦两代帝王飙演技</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="variety-right">
+        <div class="common-title">
+            <h3><a href="javascript:"><i></i>精彩推荐<span>更多 &gt;</span></a></h3>
+        </div>
+        <div class="variety-right-box">
+            <div class="img-cont">
+                <a href="javascript:"><img src="zongyi/c4ec780179e7428793b5485474885aca.jpg" alt=""></a>
+            </div>
+            <div class="img-cont-intr">
+                <div class="some-intro"><a class="color-dark" href="javascript:">郑恺唐艺昕互怼集锦</a></div>
+            </div>
+            <ul>
+                <li><i></i><a href="javascript:">宋茜张蓝心秀圆规腿</a></li>
+                <li><i></i><a href="javascript:">涂磊教你如何辨渣男</a></li>
+                <li><i></i><a href="javascript:">张一山为北京人正名</a></li>
+                <li><i></i><a href="javascript:">吴亦凡潘玮柏全球集结</a></li>
+                <li><i></i><a href="javascript:">姐姐2回归大S夫妇来啦</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--自制综艺 -->
+<div class="my-variety">
+    <div class="common-title">
+        <h3><a href="javascript:">自制综艺<span>奇葩说 &gt;</span></a></h3>
+        <ul>
+            <li class="bg-none"><a href="javascript:">饭饭男友</a></li>
+            <li><a href="javascript:">吃光全宇宙</a></li>
+            <li><a href="javascript:">饭饭男友粉丝团</a></li>
+        </ul>
+    </div>
+    <div class="my-variety-item-box clearfix">
+        <div class="my-variety-item">
+            <div class="my-variety-item-img"><a href="#"><img src="img/90109d8bbf154ee0bfc126329cd4853a.jpg" alt=""></a></div>
+            <p><a href="#"><span>发布会</span>何洁首挑大梁遭蔡康永戳中痛点泪崩</a></p>
+        </div>
+        <div class="my-variety-item">
+            <div class="my-variety-item-img"><a href="#"><img src="img/fc166a8840514638b372e54e6d8b3ed9.jpg" alt=""></a></div>
+            <p><a href="#"><span>吃光全宇宙</span>厉害了！陈瑶音乐杀手献唱鼓鼓</a></p>
+        </div>
+        <div class="my-variety-item">
+            <div class="my-variety-item-img"><a href="#"><img src="img/37411d7749cb4f578de2356c5967a7d6.jpg" alt=""></a></div>
+            <p><a href="#"><span>奇葩4</span>周五档：肖骁神吐槽婚礼就是场巨型装X</a></p>
+        </div>
+        <div class="my-variety-item">
+            <div class="my-variety-item-img"><a href="#"><img src="img/cd4b6ecf5a114303a98de6bd04169c14.jpg" alt=""></a></div>
+            <p><a href="#"><span>饭饭男友</span>进口小哥哥迪玛希挑花眼霸气表白</a></p>
+        </div>
+        <div class="my-variety-item">
+            <div class="my-variety-item-img"><a href="#"><img src="img/36e5a00473304c2b9fc555b1f3cce6eb.jpg" alt=""></a></div>
+            <p><a href="#"><span>中国有嘻哈</span>强阵容！吴亦凡潘玮柏为嘻哈正名！</a></p>
+        </div>
+        <div class="my-variety-item">
+            <div class="my-variety-item-img"><a href="#"><img src="img/0ad7ea90e4d54df4a40e02f85ec2ab8f.jpg" alt=""></a></div>
+            <p><a href="#"><span>发布会</span>抢先看：何洁大胆发问张绍刚学校潜规则</a></p>
+        </div>
+    </div>
+</div>
+<!--脱口秀-->
+<div class="talk-show">
+    <div class="common-title">
+        <h3><a href="javascript:">脱口秀<span>更多 &gt;</span></a></h3>
+        <ul>
+            <li class="bg-none"><a href="javascript:">智在说</a></li>
+        </ul>
+    </div>
+    <div class="talk-show-content clearfix">
+        <div class="talk-show-item">
+            <div class="talk-show-item-img">
+                <a href="#"><img src="img/8b7f514261f245d59c3e30749f71818d.jpg" alt=""></a>
+            </div>
+            <div class="talk-show-item-intr">
+                <h3><a href="#">暴走大事件</a></h3>
+                <p>滴滴打人落伍 滴滴专掐大V上线</p>
+            </div>
+        </div>
+        <div class="talk-show-item">
+            <div class="talk-show-item-img">
+                <a href="#"><img src="img/e856f3a6258c4c5c9d3303daa2157d85.jpg" alt=""></a>
+            </div>
+            <div class="talk-show-item-intr">
+                <h3><a href="#">非正式会议</a></h3>
+                <p>这货竟然是澳大利亚的吉祥物</p>
+            </div>
+        </div>
+        <div class="talk-show-item">
+            <div class="talk-show-item-img">
+                <a href="#"><img src="img/4f7d57d3780244a5b50744e061f65d73.gif" alt=""></a>
+            </div>
+            <div class="talk-show-item-intr">
+                <h3><a href="#">笑霸来了</a></h3>
+                <p>单手吃独食！你的良心不会痛吗</p>
+            </div>
+        </div>
+        <div class="talk-show-item">
+            <div class="talk-show-item-img">
+                <a href="#"><img src="img/2fbfc1f915994768beed999846b2de27.jpg" alt=""></a>
+            </div>
+            <div class="talk-show-item-intr">
+                <h3><a href="#">今晚80后脱口秀</a></h3>
+                <p>脱口秀版宁泽涛颜值太高遭吐槽</p>
+            </div>
+        </div>
+        <div class="talk-show-item">
+            <div class="talk-show-item-img">
+                <a href="#"><img src="img/163adb68ff784fadb48fd286c939c40b.jpg" alt=""></a>
+            </div>
+            <div class="talk-show-item-intr">
+                <h3><a href="#">谁是你的菜</a></h3>
+                <p>钟丽缇备巨熊礼物吓坏林志颖</p>
+            </div>
+        </div>
+        <div class="talk-show-item">
+            <div class="talk-show-item-img">
+                <a href="#"><img src="img/db2be13f8c25449ab9c83f8dbc3ec9a5.jpg" alt=""></a>
+            </div>
+            <div class="talk-show-item-intr">
+                <h3><a href="#">好莱坞工匠</a></h3>
+                <p>一句台词 范·迪塞尔配音格鲁特</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ad-->
+<div class="ad-box">
+    <a href="#"><img src="img/6978e2fc6c3b4791ae4c178c92d02b71.jpg" alt=""></a>
+</div>
+<!--娱乐-->
+<div class="recreation">
+    <div class="common-title">
+        <h3><a href="javascript:"><i></i>娱乐<span>更多 &gt;</span></a></h3>
+        <ul>
+            <li class="bg-none"><a href="javascript:">爱奇艺早班机</a></li>
+            <li><a href="javascript:">娱乐猛回头</a></li>
+            <li><a href="javascript:">七分七秒</a></li>
+            <li><a href="javascript:">帕帕帮</a></li>
+            <li><a href="javascript:">泡菜帮</a></li>
+            <li><a href="javascript:">音乐大抖腿</a></li>
+        </ul>
+    </div>
+    <div class="recreation-content clearfix">
+        <div class="recreation-left">
+            <div class="recreation-left-img">
+                <a href="#"><img src="img/3d97d96795764a4eb23192571ba45e8e.jpg" alt=""></a>
+                <span class="today-icon"></span>
+            </div>
+            <div class="recreation-left-intr">
+                <h3><a href="#">美如从梦境走出！17岁加拿大嫩模宛如精灵</a></h3>
+                <p><a href="#">昨天，李晨不服自己化媚娘装之后被说像姥姥，专门P图说下次要cos装之后被说像姥装之后被说像姥</a></p>
+            </div>
+        </div>
+        <div class="recreation-right">
+            <div class="recreation-item-box clearfix">
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112273416_m_601_180_101.jpg" alt=""></a>
+                        <span class="self-made"></span>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">厉害:易烊千玺女粉丝有才每天画偶像强到开画室</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112274717_m_601_m1_180_101.jpg" alt=""></a>
+                        <a href="#" class="sharpness"><span>1080P</span></a>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">互怼:《择天记》逗趣花絮 轩辕跟三十六结下梁子</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112273281_m_601_180_101.jpg" alt=""></a>
+                        <a href="#" class="sharpness"><span>1080P</span></a>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">恩爱:Ella甜晒老公爱的礼物 庆结婚纪念日曝劲宝照片</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112273418_m_601_180_101.jpg" alt=""></a>
+                        <span class="self-made"></span>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">惊悚:金·卡戴珊减肥后现身 丰乳巨臀比例吓人</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112274813_m_601_180_101.jpg" alt=""></a>
+                        <a href="#" class="sharpness"><span>1080P</span></a>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">可爱:Kimi抱妈妈卖萌撒娇 弟弟飞扑到哥哥上超萌</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112275699_m_601_180_101.jpg" alt=""></a>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">少女:李小璐分享甜馨日常 网友喊话王源</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/v_112275750_m_601_180_101.jpg" alt=""></a>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">搞怪:孙红雷被娇妻禁上床 求助罗志祥:我被家暴了</a></p>
+                </div>
+                <div class="recreation-item">
+                    <div class="recreation-item-img">
+                        <a href="#"><img src="img/6eb868e6883a4e1f83ad9cf9901161c9.jpg" alt=""></a>
+                        <a href="#" class="sharpness"><span>1080P</span></a>
+                        <a href="#" class="the-time"><span>01:30</span></a>
+                    </div>
+                    <p><a href="#">直播回顾:"重SHOW旧好"再见·好女人演唱会</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--猜你喜欢-->
+<div class="your-favorite">
+    <div class="common-title">
+        <h3><a href="javascript:"><i></i>猜你喜欢<span>更多 &gt;</span></a></h3>
+        <ul>
+            <li class="bg-none"><a href="javascript:">我的播放记录</a></li>
+            <li><a href="javascript:">我的订阅</a></li>
+            <li><a href="javascript:">我的收藏</a></li>
+            <li><a href="javascript:">我的上传</a></li>
+        </ul>
+    </div>
+    <div class="favorite-content">
+        <div class="favorite-item-box clearfix">
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112273399_m_601_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">世界异闻录</a></h3>
+                    <p>百公斤胖妹成人气“网红”</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112211379_m_601_m3_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">玛格丽特春天</a></h3>
+                    <p>艾伦X王自健爆笑耍贱</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112255229_m_601_m5_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">叨叨热剧</a></h3>
+                    <p>《择天记》大结局剧透</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/a_100046892_m_601_m2_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">铁血将军</a></h3>
+                    <p>范筑先将军的传奇故事</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112275288_m_601_m1_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">富二代打游戏欠540万</a></h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112272457_m_601_m1_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">街头老司机</a></h3>
+                    <p>男生就该为妹子们买单吗？</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_62646644_m_601_m2_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">红色机尾</a></h3>
+                    <p>二战空军红尾巴飞行员</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112265871_m_601_m1_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">大学Z课堂第二季</a></h3>
+                    <p>不收份子钱你还办婚礼吗？</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/a_100049898_m_601_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">御姐归来</a></h3>
+                    <p>千金小姐追梦故事</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112276190_m_601_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">小鱼看现场</a></h3>
+                    <p>鸟中黑社会对尬集体变怂</p>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-item-img"><a href="#"><img src="img/v_112272119_m_601_m1_180_101.jpg" alt=""></a></div>
+                <div class="favorite-intr">
+                    <h3><a href="#">内涵神评论</a></h3>
+                    <p>强势女友难驾驭的真实原因</p>
+                </div>
+            </div>
+            <div class="personal-center">
+                <a href="#">进入个人中心 &gt;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--推广广告-->
+<div class="popularize-ad">
+    <div class="popularize-ad-title">推广广告</div>
+    <span class="arrow-left"></span>
+    <span class="arrow-right"></span>
+    <div class="popularize-ad-content-box">
+        <ul class="list-images clearfix" id="show-img">
+            <li>
+                <div class="item-list-box">
+                    <a href="#" class="little-img">
+                        <img src="img/b8150b932693416dbe9387a93a0e4ea2.jpg" alt="">
+                        <img src="img/a9ee481c2b7141449b32fc5c82002022.jpg" alt="">
+                    </a>
+                    <a href="#"><img src="img/3b57c7f5bdab415bbe2e2e1815ecbd7e.jpg" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="item-list-box">
+                    <a href="#" class="little-img">
+                        <img src="img/b8150b932693416dbe9387a93a0e4ea2.jpg" alt="">
+                        <img src="img/a9ee481c2b7141449b32fc5c82002022.jpg" alt="">
+                    </a>
+                    <a href="#" class="big-img"><img src="img/560fa9c60bf04142b87b6f06a9bf9ab4.jpg" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="item-list-box">
+                    <a href="#" class="little-img">
+                        <img src="img/b8150b932693416dbe9387a93a0e4ea2.jpg" alt="">
+                        <img src="img/a9ee481c2b7141449b32fc5c82002022.jpg" alt="">
+                    </a>
+                    <a href="#"><img src="img/29f609447e364ecfbe9f57628ec685f2.jpg" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="item-list-box">
+                    <a href="#" class="little-img">
+                        <img src="img/b8150b932693416dbe9387a93a0e4ea2.jpg" alt="">
+                        <img src="img/a9ee481c2b7141449b32fc5c82002022.jpg" alt="">
+                    </a>
+                    <a href="#"><img src="img/29f609447e364ecfbe9f57628ec685f2.jpg" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="item-list-box">
+                    <a href="#" class="little-img">
+                        <img src="img/b8150b932693416dbe9387a93a0e4ea2.jpg" alt="">
+                        <img src="img/a9ee481c2b7141449b32fc5c82002022.jpg" alt="">
+                    </a>
+                    <a href="#"><img src="img/29f609447e364ecfbe9f57628ec685f2.jpg" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="item-list-box">
+                    <a href="#" class="little-img">
+                        <img src="img/b8150b932693416dbe9387a93a0e4ea2.jpg" alt="">
+                        <img src="img/a9ee481c2b7141449b32fc5c82002022.jpg" alt="">
+                    </a>
+                    <a href="#"><img src="img/29f609447e364ecfbe9f57628ec685f2.jpg" alt=""></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<br><br><br><br><br>
+</body>
+</html>
